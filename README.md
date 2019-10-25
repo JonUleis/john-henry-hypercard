@@ -2,7 +2,9 @@
 
 Web recreation of the They Might Be Giants "John Henry" HyperCard stack from 1994.
 
-## Project setup
+**Work in progress** started on October 25, 2019.
+
+## vue-cli project setup
 ```
 yarn install
 ```
@@ -16,11 +18,3 @@ yarn serve
 ```
 yarn build
 ```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

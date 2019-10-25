@@ -1,0 +1,143 @@
+@import "~normalize.css";
+
+@font-face {
+  font-family: 'c';
+  src: url('./assets/fonts/c.otf');
+}
+
+@font-face {
+  font-family: 'g';
+  src: url('./assets/fonts/g.otf');
+}
+
+html {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  font-smooth: never;
+  -webkit-font-smoothing : none;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+#app {
+  align-items: center;
+  background: url('./assets/bg.png');
+  display: flex;
+  cursor: default;
+  font-family: 'c';
+  font-size: 10px;
+  justify-content: center;
+  text-align: center;
+
+  @media (min-width: 1050px) and (min-height: 750px) {
+    font-size: 20px;
+  }
+}
+
+.hypercard {
+  background: white;
+  border: .1em solid;
+  box-shadow: #000 .1em .1em;
+  height: 36.2em;
+  min-width: 51.4em;
+  width: 51.4em;
+}
+
+.bar {
+  background: url('./assets/bar.png') 0/51.2em auto;
+  border-bottom: .1em solid;
+  line-height: 1.7em;
+
+  span {
+    display: block;
+    font-size: 1.2em;
+  }
+}
+
+.main {
+  background: url('./assets/main.png') 0/51.2em auto;
+  height: calc(100% - 1.8em);
+  position: relative;
+}
+
+.btn {
+  cursor: pointer;
+  position: absolute;
+
+  &--home {
+    bottom: 1em;
+    left: 1.6em;
+    width: 4.3em;
+    height: 4.2em;
+
+    &:active {
+      background: url('./assets/main.png') -1.6em -29.0em/51.2em auto;
+      filter: invert(1);
+    }
+  }
+
+  &--about {
+    bottom: .9em;
+    left: 6.7em;
+    width: 6.7em;
+    height: 4.4em;
+
+    &:active {
+      background: url('./assets/main.png') -6.7em -28.9em/51.2em auto;
+      filter: invert(1);
+    }
+  }
+}
+
+.tracks {
+  bottom: .9em;
+  display: flex;
+  font-family: 'Geneva', 'g';
+  flex-wrap: wrap;
+  height: 27.5em;
+  justify-content: stretch;
+  align-content: space-between;
+  position: absolute;
+  right: .9em;
+  width: 36em;
+
+  .btn {
+    background: white url('./assets/jh.png') 50% .5em/3.2em no-repeat;
+    border: .1em solid;
+    box-shadow: #000 .1em .1em;
+    flex: auto;
+    height: 5.2em;
+    margin: 0 .15em;
+    position: static;
+    padding-top: 3.8em;
+    min-width: 4em;
+
+    span {
+      display: block;
+      font-size: .9em;
+      padding: 0 .5em;
+    }
+
+    &:active {
+      border-color: #fff;
+      filter: invert(1);
+      box-shadow: #fff .1em .1em;
+    }
+  }
+}
