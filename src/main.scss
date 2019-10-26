@@ -48,6 +48,16 @@ body,
   @media (min-width: 1050px) and (min-height: 750px) {
     font-size: 20px;
   }
+
+  &.playing {
+    * {
+      cursor: wait;
+    }
+
+    .btn {
+      pointer-events: none;
+    }
+  }
 }
 
 .hypercard {

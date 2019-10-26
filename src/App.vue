@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="{ playing: playing }">
     <div class="hypercard">
       <nav class="bar">
         <span>John_Henry_Sampler.stk</span>
@@ -22,13 +22,17 @@
 </template>
 
 <script>
+import { Howl } from "howler";
+
 export default {
   name: "app",
   data() {
     return {
+      playing: false,
+      sound: undefined,
       tracks: [
         ["A Self Called Nowhere", "self"],
-        ["I Should Be Allowed To Think", "allowed"],
+        ["I Should Be Allowed To Think", "think"],
         ["O, Do Not Forsake Me", "forsake"],
         ["Spy", "spy"],
         ["No One Knows My Plan", "plan"],
@@ -49,6 +53,25 @@ export default {
         ["Subliminal", "subliminal"]
       ]
     };
+  },
+  methods: {
+    play(file) {
+      if (this.sound) {
+        this.sound.unload();
+      }
+      this.sound = new Howl({
+        html5: true,
+        autoplay: true,
+        src: `audio/${file}.mp3`,
+        onplay: () => {
+          this.playing = true;
+          this.update();
+        },
+        onend: () => {
+          this.playing = false;
+        }
+      });
+    }
   }
 };
 </script>
