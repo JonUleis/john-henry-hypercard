@@ -1,11 +1,5 @@
 @import "~normalize.css";
 
-@mixin double {
-  @media (min-width: 1050px) and (min-height: 750px) {
-    @content;
-  }
-}
-
 @font-face {
   font-family: 'c';
   src: url('./assets/fonts/c.otf');
@@ -47,7 +41,7 @@ body,
   justify-content: center;
   text-align: center;
 
-  @include double {
+  @media (min-width: 1050px) and (min-height: 750px) {
     font-size: 20px;
   }
 
@@ -77,8 +71,7 @@ body,
     }
 
     @media (min-aspect-ratio: 1/1) {
-      font-size: 2.45vh;
-      margin-top: -4.5%;
+      font-size: 2.3vh;
     }
   }
 }
@@ -253,9 +246,9 @@ body,
   }
 }
 
+header,
 footer {
   background: rgba(#eee, .9);
-  bottom: 0;
   font-size: 12px;
   font-weight: normal;
   left: 0;
@@ -263,6 +256,18 @@ footer {
   padding: .8em;
   position: absolute;
   right: 0;
+}
+
+ header {
+  top: 0;
+
+  @media (min-aspect-ratio: 1/1) {
+    display: none;
+  }
+}
+
+footer {
+  bottom: 0;
 
   a {
     color: inherit;
@@ -271,6 +276,22 @@ footer {
   @media (min-width: 600px) {
     br {
       display: none;
+    }
+  }
+
+  .mobile & {
+    @media (min-aspect-ratio: 1/1) {
+      left: auto;
+      right: -100vh;
+      transform-origin: 0 100%;
+      transform: rotate(-90deg);
+      width: 100vh;
+    }
+
+    @media (min-aspect-ratio: 1/1) and (max-height: 599px) {
+      br {
+        display: block;
+      }
     }
   }
 }

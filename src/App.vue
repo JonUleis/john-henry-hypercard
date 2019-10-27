@@ -1,5 +1,8 @@
 <template>
   <div id="app" :class="{ playing: playing, mobile: isMobile().any }">
+    <header v-if="isMobile().any">
+      Turn your device sideways to enjoy.
+    </header>
     <div class="hypercard">
       <nav class="bar">
         <span>John_Henry_Sampler.stk</span>
@@ -61,11 +64,11 @@
         >GitHub</a
       >. <br />
       Thanks
+      <a href="http://mikebuffington.net/" target="_blank">Mike Buffington</a>
+      and
       <a href="http://tmbg.bryceland.com/JHstack.php" target="_blank"
         >Bryce Hurst</a
-      >
-      and
-      <a href="http://mikebuffington.net/" target="_blank">Mike Buffington</a>.
+      >.
     </footer>
   </div>
 </template>
