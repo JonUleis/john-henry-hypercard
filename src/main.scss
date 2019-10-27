@@ -1,13 +1,14 @@
 @import "~normalize.css";
 
-@font-face {
-  font-family: 'c';
-  src: url('./assets/fonts/c.otf');
+@mixin double {
+  @media (min-width: 1050px) and (min-height: 750px) {
+    @content;
+  }
 }
 
 @font-face {
-  font-family: 'g';
-  src: url('./assets/fonts/g.otf');
+  font-family: 'c';
+  src: url('./assets/fonts/c.otf');
 }
 
 html {
@@ -26,6 +27,7 @@ body {
   image-rendering: crisp-edges;
   image-rendering: pixelated;
   font-smooth: never;
+  -ms-interpolation-mode: nearest-neighbor;
   -webkit-font-smoothing : none;
 }
 
@@ -45,7 +47,7 @@ body,
   justify-content: center;
   text-align: center;
 
-  @media (min-width: 1050px) and (min-height: 750px) {
+  @include double {
     font-size: 20px;
   }
 
@@ -67,16 +69,27 @@ body,
   height: 36.2em;
   min-width: 51.4em;
   width: 51.4em;
+
+  .mobile & {
+    @media (max-aspect-ratio: 1/1) {
+      font-size: 2.6vw;
+      transform: rotate(90deg);
+    }
+
+    @media (min-aspect-ratio: 1/1) {
+      font-size: 2.45vh;
+      margin-top: -4.5%;
+    }
+  }
 }
 
 .bar {
-  background: url('./assets/bar.png') 0/51.2em auto;
+  background: url('./assets/bar.png') no-repeat 0/51.2em auto;
   border-bottom: .1em solid;
   line-height: 1.7em;
 
   span {
-    display: block;
-    font-size: 1.2em;
+    opacity: 0;
   }
 }
 
@@ -89,6 +102,10 @@ body,
 .btn {
   cursor: pointer;
   position: absolute;
+
+  span {
+    opacity: 0;
+  }
 
   &--home {
     bottom: 1em;
@@ -113,41 +130,147 @@ body,
       filter: invert(1);
     }
   }
+
+  &--cool {
+    background: url('./assets/cool.png') 0 0/auto 100%;
+    bottom: 1.3em;
+    right: 3.7em;
+    width: 6.2em;
+    height: 1.9em;
+
+    &:active {
+      background-position-x: -100%;
+    }
+  }
 }
 
 .tracks {
   bottom: .9em;
   display: flex;
-  font-family: 'Geneva', 'g';
   flex-wrap: wrap;
   height: 27.5em;
-  justify-content: stretch;
+  justify-content: space-between;
   align-content: space-between;
   position: absolute;
   right: .9em;
   width: 36em;
 
   .btn {
-    background: white url('./assets/jh.png') 50% .5em/3.2em no-repeat;
+    background: white url('./assets/jh.png') 50% .3em/3.2em no-repeat;
     border: .1em solid;
-    box-shadow: #000 .1em .1em;
-    flex: auto;
-    height: 5.2em;
-    margin: 0 .15em;
-    position: static;
-    padding-top: 3.8em;
-    min-width: 4em;
+    flex-grow: 0;
+    position: relative;
 
-    span {
-      display: block;
-      font-size: .9em;
-      padding: 0 .5em;
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(6),
+    &:nth-child(7),
+    &:nth-child(8),
+    &:nth-child(9),
+    &:nth-child(10),
+    &:nth-child(11),
+    &:nth-child(12),
+    &:nth-child(17),
+    &:nth-child(18),
+    &:nth-child(19),
+    &:nth-child(20) {
+      background-position-y: .4em;
     }
 
-    &:active {
+    img {
+      display: block;
+      height: 5.1em;
+      width: auto;
+    }
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      img {
+        height: 5em;
+      }
+    }
+
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(6),
+    &:nth-child(7) {
+      img {
+        height: 5.2em;
+      }
+    }
+
+    &:nth-child(13),
+    &:nth-child(14),
+    &:nth-child(15),
+    &:nth-child(16) {
+      img {
+        height: 4.9em;
+      }
+    }
+
+    &::after {
+      border: solid;
+      border-width: 0 .1em .1em 0;
+      bottom: -.2em;
+      content: '';
+      display: block;
+      height: calc(100% + .1em);
+      pointer-events: none;
+      position: absolute;
+      right: -.2em;
+      width: calc(100% + .1em);
+    }
+
+    span {
+      bottom: .3em;
+      display: block;
+      position: absolute;
+      width: 100%;
+    }
+
+    &:active,
+    &--active {
       border-color: #fff;
       filter: invert(1);
       box-shadow: #fff .1em .1em;
+    }
+  }
+}
+
+.info {
+  background: url('./assets/info.png') 0 0/36.2em auto no-repeat;
+  border: .1em solid;
+  bottom: .8em;
+  height: 27.9em;
+  position: absolute;
+  right: .5em;
+  width: 36.4em;
+
+  p {
+    opacity: 0;
+    position: absolute;
+  }
+}
+
+footer {
+  background: rgba(#eee, .9);
+  bottom: 0;
+  font-size: 12px;
+  font-weight: normal;
+  left: 0;
+  line-height: 1.2em;
+  padding: .8em;
+  position: absolute;
+  right: 0;
+
+  a {
+    color: inherit;
+  }
+
+  @media (min-width: 600px) {
+    br {
+      display: none;
     }
   }
 }
