@@ -73,8 +73,12 @@ body,
 
   .mobile & {
     @media (max-aspect-ratio: 1/1) {
-      font-size: 2.6vw;
+      font-size: 2.3vw;
       transform: rotate(90deg);
+    }
+
+    @media (max-aspect-ratio: 10/16) {
+      font-size: 2.6vw;
     }
 
     @media (min-aspect-ratio: 1/1) {
