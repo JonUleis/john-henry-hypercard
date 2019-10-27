@@ -1,7 +1,9 @@
 <template>
   <div id="app" :class="{ playing: playing, mobile: isMobile().any }">
-    <header v-if="isMobile().any">
-      Turn your device sideways to enjoy.
+    <header>
+      <span v-if="isMobile().any">
+        Turn your device sideways to enjoy.
+      </span>
     </header>
     <div class="hypercard">
       <nav class="bar">
@@ -58,17 +60,21 @@
       </div>
     </div>
     <footer>
-      HTML5 Version by
-      <a href="https://jonuleis.com/" target="_blank">Jon Uleis</a>. Code on
-      <a href="https://github.com/JonUleis/john-henry-hypercard" target="_blank"
-        >GitHub</a
-      >. <br />
-      Thanks
-      <a href="http://mikebuffington.net/" target="_blank">Mike Buffington</a>
-      and
-      <a href="http://tmbg.bryceland.com/JHstack.php" target="_blank"
-        >Bryce Hurst</a
-      >.
+      <span
+        >HTML5 Version by
+        <a href="https://jonuleis.com/" target="_blank">Jon Uleis</a>. Code on
+        <a
+          href="https://github.com/JonUleis/john-henry-hypercard"
+          target="_blank"
+          >GitHub</a
+        >. <br />
+        Thanks
+        <a href="http://mikebuffington.net/" target="_blank">Mike Buffington</a>
+        and
+        <a href="http://tmbg.bryceland.com/JHstack.php" target="_blank"
+          >Bryce Hurst</a
+        >.</span
+      >
     </footer>
   </div>
 </template>

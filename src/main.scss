@@ -34,15 +34,22 @@ body,
 #app {
   align-items: center;
   background: url('./assets/bg.png');
-  display: flex;
   cursor: default;
+  display: flex;
+  flex-direction: column;
   font-family: 'c';
   font-size: 10px;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
 
-  @media (min-width: 1050px) and (min-height: 750px) {
+  @media (min-width: 1050px) and (min-height: 760px) {
     font-size: 20px;
+  }
+
+  &.mobile {
+    @media (min-aspect-ratio: 1/1) {
+      justify-content: center;
+    }
   }
 
   &.playing {
@@ -173,6 +180,7 @@ body,
     img {
       display: block;
       height: 5.1em;
+      pointer-events: none;
       width: auto;
     }
 
@@ -226,7 +234,10 @@ body,
     &--active {
       border-color: #fff;
       filter: invert(1);
-      box-shadow: #fff .1em .1em;
+
+      &::after {
+        border-color: #fff;
+      }
     }
   }
 }
@@ -251,24 +262,24 @@ footer {
   background: rgba(#eee, .9);
   font-size: 12px;
   font-weight: normal;
-  left: 0;
   line-height: 1.2em;
-  padding: .8em;
-  position: absolute;
-  right: 0;
+  width: 100%;
+
+  span {
+    display: block;
+    padding: .8em;
+  }
 }
 
  header {
-  top: 0;
-
-  @media (min-aspect-ratio: 1/1) {
-    display: none;
+    @media (min-aspect-ratio: 1/1) {
+      span {
+      display: none;
+    }
   }
 }
 
 footer {
-  bottom: 0;
-
   a {
     color: inherit;
   }
@@ -281,7 +292,8 @@ footer {
 
   .mobile & {
     @media (min-aspect-ratio: 1/1) {
-      left: auto;
+      bottom: 0;
+      position: absolute;
       right: -100vh;
       transform-origin: 0 100%;
       transform: rotate(-90deg);
