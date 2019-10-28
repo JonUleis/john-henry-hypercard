@@ -80,6 +80,7 @@
 </template>
 
 <script>
+/* global gtag */
 import { Howl } from "howler";
 import isMobile from "ismobilejs";
 
@@ -130,6 +131,10 @@ export default {
         onend: () => {
           this.playing = false;
         }
+      });
+      gtag("config", "UA-34406365-7");
+      gtag("event", "play", {
+        event_label: this.tracks[file][0]
       });
     }
   }
