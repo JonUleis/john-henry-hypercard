@@ -1,6 +1,6 @@
 # john-henry-hypercard
 
-Web recreation of the They Might Be Giants *John Henry* HyperCard stack from 1994.
+Web recreation of the They Might Be Giants *John Henry* HyperCard stack, originally authored by John Linnell and [released on alt.music.tmbg](https://groups.google.com/d/msg/alt.music.tmbg/0Io_rCkgQcA/pYldG5Be790J) in May 1994.
 
 Developed October 25-26, 2019 by [Jon Uleis](https://jonuleis.com).
 
