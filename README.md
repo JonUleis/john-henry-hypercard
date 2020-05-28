@@ -1,6 +1,6 @@
 # john-henry-hypercard
 
-Web recreation of the They Might Be Giants *John Henry* HyperCard stack from 1994.
+Web recreation of the They Might Be Giants *John Henry* HyperCard stack, originally authored by John Linnell and [released on alt.music.tmbg](https://groups.google.com/d/msg/alt.music.tmbg/0Io_rCkgQcA/pYldG5Be790J) in May 1994.
 
 Developed October 25-26, 2019 by [Jon Uleis](https://jonuleis.com).
 
@@ -12,7 +12,7 @@ Developed October 25-26, 2019 by [Jon Uleis](https://jonuleis.com).
 **Original HyperCard stack**  (thanks [Mike Buffington](http://mikebuffington.net/))  
 🎵 https://jonuleis.com/jh/hc.zip
 
-**Flash port by Bryce Hurst**  
+**2004 Flash port by Bryce Hurst**  
 🎹 http://tmbg.bryceland.com/JHstack.php
 
 ## Technologies used
@@ -23,7 +23,7 @@ Developed October 25-26, 2019 by [Jon Uleis](https://jonuleis.com).
 * [Audacity](https://www.audacityteam.org/) - Audio editor used to record system playback
 * [dBpoweramp](https://www.dbpoweramp.com/) - Batch audio converter (V0 MP3 setting)
 * [ImageOptim](https://imageoptim.com/mac) - lossless PNG compressor
-* Adobe Photoshop CS
+* Adobe Photoshop CC
 * Visual Studio Code
 
 ### In the build
