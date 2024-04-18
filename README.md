@@ -6,13 +6,13 @@ Developed October 25-26, 2019 by [Jon Uleis](https://jonuleis.com).
 
 ## Links
 
-**Check it out**  
+**Check it out**
 🎸 https://jonuleis.com/jh/
 
-**Original HyperCard stack**  (thanks [Mike Buffington](http://mikebuffington.net/))  
+**Original HyperCard stack**  (thanks [Mike Buffington](http://mikebuffington.net/))
 🎵 https://jonuleis.com/jh/hc.zip
 
-**2004 Flash port by Bryce Hurst**  
+**2004 Flash port by Bryce Hurst**
 🎹 http://tmbg.bryceland.com/JHstack.php
 
 ## Technologies used
@@ -25,6 +25,7 @@ Developed October 25-26, 2019 by [Jon Uleis](https://jonuleis.com).
 * [ImageOptim](https://imageoptim.com/mac) - lossless PNG compressor
 * Adobe Photoshop CC
 * Visual Studio Code
+* This project is tested with BrowserStack
 
 ### In the build
 
